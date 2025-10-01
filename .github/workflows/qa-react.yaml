@@ -2,7 +2,7 @@ name: QA react automation
 on:
     workflow_dispatch:
 jobs: 
-    test:
+    automation_running:
         timeout-minutes: 60
         runs-on: ubuntu-latest
         steps:
