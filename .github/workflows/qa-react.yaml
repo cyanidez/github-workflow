@@ -17,12 +17,12 @@ jobs:
           with:
             node-version: lts/*
         - name: Install dependencies
-            run: | 
-            npm init playwright
+          run: | 
+                npm init playwright
                 npm install @playwright/test
                 npx playwright install 
         - name: Run Playwright tests
-            run: npx playwright test
+          run: npx playwright test
         - uses: actions/upload-artifact@v4
           if: ${{ !cancelled() }}
           with:
