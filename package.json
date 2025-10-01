@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "todomvc": "npx playwright test --headed --project=chromium todo.spec.ts"
+    "todomvc": "npx playwright test --project=chromium todo.spec.ts"
   },
   "keywords": [],
   "author": "",
