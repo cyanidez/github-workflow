@@ -2,7 +2,9 @@
   "name": "playwright-gha",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "todomvc": "npx playwright test --headed --project=chromium todo.spec.ts"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
