@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { HomePage } from '../utils/pages/homepage.spec.ts';
 import { ReactPage } from '../utils/pages/reactpage.spec.ts';
 
-test.only('All cases', async ({ page }) => {
+test('Access into TodoMVC and input 3 todos', async ({ page }) => {
   const onHomePage = new HomePage(page);
   const onReactPage = new ReactPage(page);
 
@@ -12,10 +12,9 @@ test.only('All cases', async ({ page }) => {
   await onReactPage.fillTodoAndEnter('แปรงฟัน');
   await onReactPage.fillTodoAndEnter('ล้างหน้า');
   await onReactPage.fillTodoAndEnter('อาบน้ำ');
-  await page.waitForTimeout(5000);
 })
 
-test('login', async ({ page }) => { 
-  await page.goto('https://login.microsoftonline.com')
-  await page.waitForTimeout(10000);
-})
+// test('login', async ({ page }) => { 
+//   await page.goto('https://login.microsoftonline.com')
+//   await page.waitForTimeout(10000);
+// })
