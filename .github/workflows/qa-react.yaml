@@ -1,5 +1,7 @@
 name: QA react automation 
 on:
+    schedule:
+    - cron: "0 * * * *" # Every Hour
     workflow_dispatch:
 jobs: 
     automation_running:
