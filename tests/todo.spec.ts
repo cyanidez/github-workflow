@@ -12,7 +12,12 @@ test('Access into TodoMVC and input 3 todos', async ({ page }) => {
   await onReactPage.fillTodoAndEnter('แปรงฟัน');
   await onReactPage.fillTodoAndEnter('ล้างหน้า');
   await onReactPage.fillTodoAndEnter('อาบน้ำ');
+  await onReactPage.todoShouldAdded('แปรงฟัน', 1);
+  await onReactPage.todoShouldAdded('ล้างหน้า', 2);
+  await onReactPage.todoShouldAdded('อาบน้ำ', 3);
+
 })
+
 
 // test('login', async ({ page }) => { 
 //   await page.goto('https://login.microsoftonline.com')

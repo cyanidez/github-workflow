@@ -1,0 +1,46 @@
+{
+  "reportFormat": "CTRF",
+  "specVersion": "0.0.0",
+  "reportId": "8742df51-df32-4da6-87b9-296e43c81f8e",
+  "timestamp": "2025-10-26T01:37:16.967Z",
+  "generatedBy": "playwright-ctrf-json-reporter",
+  "results": {
+    "tool": {
+      "name": "playwright"
+    },
+    "summary": {
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "pending": 0,
+      "skipped": 0,
+      "other": 0,
+      "start": 1761442636978,
+      "stop": 1761442639211,
+      "suites": 0
+    },
+    "tests": [
+      {
+        "name": "Access into TodoMVC and input 3 todos",
+        "status": "passed",
+        "duration": 1713,
+        "start": 1761442637,
+        "stop": 1761442638,
+        "rawStatus": "passed",
+        "tags": [],
+        "type": "e2e",
+        "filePath": "/Users/preme.w/mywork/playground/QA/playwright-gha/tests/todo.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "steps": [],
+        "suite": "chromium > todo.spec.ts",
+        "attachments": [],
+        "stdout": [],
+        "stderr": [],
+        "extra": {
+          "annotations": []
+        }
+      }
+    ]
+  }
+}
