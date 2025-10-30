@@ -47,7 +47,7 @@ jobs:
           uses: peaceiris/actions-gh-pages@v3
           if: ${{ always() && (steps.allure-report.outcome == 'success') }}
           with:
-            github_token: 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
+            github_token: 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
             publish_branch: gh-pages
             publish_dir: ${{ steps.allure-report.outputs.reports-site }}
             destination_dir: ${{ steps.allure-report.outputs.reports-site-path }}
