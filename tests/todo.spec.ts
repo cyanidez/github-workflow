@@ -14,7 +14,7 @@ test('Access into TodoMVC and input 3 todos', async ({ page }) => {
   await onReactPage.fillTodoAndEnter('อาบน้ำ');
   await onReactPage.todoShouldAdded('แปรงฟัน', 1);
   await onReactPage.todoShouldAdded('ล้างหน้า', 2);
-  await onReactPage.todoShouldAdded('อาบน้ำ', 2);
+  await onReactPage.todoShouldAdded('อาบน้ำ', 3);
 
 })
 

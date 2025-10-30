@@ -13,8 +13,9 @@
     "playwright": "^1.55.1"
   },
   "devDependencies": {
-    "@playwright/test": "^1.55.1",
+    "@playwright/test": "^1.56.1",
     "@types/node": "^24.5.2",
+    "allure-playwright": "^3.4.2",
     "playwright-ctrf-json-reporter": "^0.0.24"
   }
 }
