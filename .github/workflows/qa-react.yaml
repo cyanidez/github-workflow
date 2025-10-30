@@ -25,34 +25,29 @@ jobs:
             name: playwright-report
             path: playwright-report/
             retention-days: 30
-        - uses: actions/upload-artifact@master
-          with:
-            name: allure-results
-            path: allure-results
-            retention-days: 20
-        - name: Get Allure history
-          uses: actions/checkout@v2
+        - name: Load Allure test report history
+          uses: actions/checkout@v4
           if: always()
           continue-on-error: true
           with:
             ref: gh-pages
-            path: gh-pages
-    
-        - name: Test marketplace action
-          uses: simple-elf/allure-report-action@master
-          if: always()
-          id: allure-report
-          with:
-            allure_results: allure-results
-            gh_pages: gh-pages
-            allure_report: allure-report
-            allure_history: allure-history
-            keep_reports: 20
+            path: gh-pages-dir
 
-        - name: Deploy report to Github Pages
+        - name: Generate Allure test report
+          uses: andgineer/allure-report@v3.5
+          id: allure-report
           if: always()
-          uses: peaceiris/actions-gh-pages@v2
-          env:
-            PERSONAL_TOKEN: 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
-            PUBLISH_BRANCH: gh-pages
-            PUBLISH_DIR: allure-history
+          with:
+            allure-results: allure-results
+            website: gh-pages-dir
+            reports-site-path: builds/tests
+            report-page: behaviors
+
+        - name: Publish Allure test report
+          uses: peaceiris/actions-gh-pages@v3
+          if: ${{ always() && (steps.allure-report.outcome == 'success') }}
+          with:
+            github_token: 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
+            publish_branch: gh-pages
+            publish_dir: ${{ steps.allure-report.outputs.reports-site }}
+            destination_dir: ${{ steps.allure-report.outputs.reports-site-path }}
